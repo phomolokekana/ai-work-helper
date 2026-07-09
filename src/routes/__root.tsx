@@ -81,20 +81,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Workplace AI — Privacy-first Productivity Assistant" },
+      { title: "Dashboard — Workplace AI" },
       {
         name: "description",
         content:
-          "Generate professional emails, plan your day, and chat with an AI workplace assistant. No sign-up, no data stored.",
+          "Your AI productivity workspace: generate emails, plan your day, and chat with an intelligent workplace assistant.",
       },
-      { property: "og:title", content: "Workplace AI — Privacy-first Productivity Assistant" },
+      { property: "og:title", content: "Dashboard — Workplace AI" },
       {
         property: "og:description",
         content:
-          "AI-powered email writing, task planning, and workplace chat. Runs in your browser session only — no account required.",
+          "Your AI productivity workspace: generate emails, plan your day, and chat with an intelligent workplace assistant.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Dashboard — Workplace AI" },
+      { name: "twitter:description", content: "Your AI productivity workspace: generate emails, plan your day, and chat with an intelligent workplace assistant." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b481d5f4-f86e-431d-b41b-53b5119078e4/id-preview-3bb4d155--44d013a7-f818-491e-bc6f-c86442469c29.lovable.app-1783631708079.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b481d5f4-f86e-431d-b41b-53b5119078e4/id-preview-3bb4d155--44d013a7-f818-491e-bc6f-c86442469c29.lovable.app-1783631708079.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
