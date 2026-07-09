@@ -51,22 +51,21 @@ Return a JSON object with:
 - estimatedCompletion: brief estimate string`;
 
     try {
-      const { experimental_output } = await generateText({
+      const result = await generateText({
         model,
         system,
         prompt,
-        experimental_output: Output.object({ schema: PlanSchema }),
+        output: Output.object({ schema: PlanSchema }),
       });
-      return experimental_output;
+      return result.output;
     } catch (error) {
       if (NoObjectGeneratedError.isInstance(error)) {
         return {
           items: [],
-          breakRecommendations: "",
+          breakRecommendations: "AI response could not be parsed. Please try again.",
           productivityTips: [],
           estimatedCompletion: "",
-          raw: error.text ?? "",
-        } as z.infer<typeof PlanSchema> & { raw?: string };
+        };
       }
       throw error;
     }

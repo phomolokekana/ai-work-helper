@@ -20,7 +20,7 @@ export const Route = createFileRoute("/api/chat")({
         const result = streamText({
           model: gateway(CHAT_MODEL),
           system: SYSTEM,
-          messages: convertToModelMessages(body.messages),
+          messages: await convertToModelMessages(body.messages),
         });
         return result.toUIMessageStreamResponse({ originalMessages: body.messages });
       },
