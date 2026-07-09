@@ -46,16 +46,15 @@ Return a JSON object with:
 - body: the full email body including a greeting and a professional closing (do NOT include the subject line in the body)`;
 
     try {
-      const { experimental_output } = await generateText({
+      const result = await generateText({
         model,
         system,
         prompt,
-        experimental_output: Output.object({ schema: OutSchema }),
+        output: Output.object({ schema: OutSchema }),
       });
-      return experimental_output;
+      return result.output;
     } catch (error) {
       if (NoObjectGeneratedError.isInstance(error)) {
-        // Fallback: return raw text as body
         return { subject: data.subject || "Message", body: error.text ?? "" };
       }
       throw error;
